@@ -83,7 +83,7 @@ function filterTodos(e){
     
 }
 
-function addTodo(e){
+function addTodo (e) {
     const newTodo = todoInput.value.trim(); // Peki trim() ne işe yarar : Kodlamada yeni arkadaşlar için başında ve sonunda boşluklu girilen değerleri temiz olarak almıs aluruz
     let mesaj = "";
 
@@ -95,9 +95,8 @@ function addTodo(e){
          * https://v4-alpha.getbootstrap.com/components/alerts/
          */
         mesaj = "Lütfen bir todo girin.";
-        showAlert("danger",mesaj); // tek bir function ile birden fazla durum için dinamik alert function u oluşturmak için parametre gönderelim
-    }
-    else{
+        showAlert("danger", mesaj); // tek bir function ile birden fazla durum için dinamik alert function u oluşturmak için parametre gönderelim
+    } else {
 
         // Step 8 : Var olan bir todo yu listeye tekrar eklememek :
         const isTodoInListValue = isTodoInList(newTodo);

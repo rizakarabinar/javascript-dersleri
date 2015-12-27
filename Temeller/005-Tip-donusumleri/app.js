@@ -9,21 +9,28 @@ value = String(function(){console.log()});
 value = String([1,2,3,4,5])
 value = (3.14).toString();
 value = String(null);
+console.log(value);
 
 // Veri tiplerini sayiya cevirme
 
 value = Number(123);
 value = Number(null);
+value = Number(true);
+console.log(value);
 
 let x;
 value = Number(undefined); //NaN hatasi aliriz.
-value = x; // NaN hatasi neden almadik ???
+value = Number(""); //0 geliyor.
+value = x; // undefined hatasi alinir
+console.log(value);
 value = Number("riza"); // NaN hatasi aliriz
 value = Number(function(){console.log();})
 value = Number([1,2,3]); //NaN Hatasi aliriz.
 value = Number("3.14");
 
 value = parseFloat("3.14");
+value = parseInt("3.14");
+console.log(value);
 value = parseInt("3");
 
 console.log(value);

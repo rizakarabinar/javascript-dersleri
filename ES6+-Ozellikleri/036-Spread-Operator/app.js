@@ -1,10 +1,10 @@
 // Spread Operator
 
 
-// // Start : 
+// Start : 
 // const langs = ["java","css","html"];
 
-// console.log(langs);
+console.log(langs);
 
 // // gelin langs ın tüm elemanlarını birer boşluklu olarak yazdıralım
 // console.log(langs[0], langs[1], langs[2]);
@@ -36,7 +36,7 @@ console.log(numbers2);
 const addNumbers = (a,b,c) => console.log(a+b+c);
 addNumbers(2,3,4);
 
-const numbers3 = [100,200,300];
+const numbers3 = [1,2,100,200,300];
 // eski yontemle
 addNumbers(numbers3[0],numbers3[1],numbers3[2]);
 

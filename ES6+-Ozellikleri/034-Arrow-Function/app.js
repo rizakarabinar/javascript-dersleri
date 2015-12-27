@@ -30,6 +30,7 @@ merhaba3("Riza");
 // hatta tek bir işlem yapıyorsa süslü parantezleri de kullanmak zorunda değiliz.
 // yani :
 const merhaba4 = firstName => console.log("merhaba",firstName);
+
 merhaba4("Rıza");
 
 
@@ -40,8 +41,10 @@ merhaba4("Rıza");
 const cube = function(x){
     return x * x * x;
 }
+
 console.log(cube(3));
 
 // arrow function ile ne kadar kısa olabileceğine bakalım.
 const cube2 = x => x * x * x ;
+
 console.log(cube2(4));
