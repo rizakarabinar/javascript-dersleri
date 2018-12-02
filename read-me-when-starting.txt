@@ -1,2 +1,5 @@
-i
-pwd
+visual studio code kullanacaðýz.
+iki tane eklentiye ihtiyaç duyuyoruz.
+1-Javascript Code Snippets
+2-Live Server
+----------------------------------------------
