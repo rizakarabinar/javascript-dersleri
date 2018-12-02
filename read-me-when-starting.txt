@@ -3,3 +3,7 @@ iki tane eklentiye ihtiyaç duyuyoruz.
 1-Javascript Code Snippets
 2-Live Server
 ----------------------------------------------
+Temeller klasörü ile eðitime devam edildi.
+Önce Javascript Beginning
+Console
+Deðiþkenler,Veritipleri ile devam edildi.
