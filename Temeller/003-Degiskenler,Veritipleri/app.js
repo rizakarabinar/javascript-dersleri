@@ -40,7 +40,11 @@ console.log(typeof ud);
 //Primative Degisken tipleri --Finish
 
 
-
+/**
+ * Primative degiskenler ile Referans veri tipleri arasindaki en onemli fark
+ * ram uzerinde tutulus seklinden kaynaklanir. Referans tipler adresleme yon-
+ * temi ile degerleme yapar.
+ */
 
 //Referans Veri Tipleri --Start
 

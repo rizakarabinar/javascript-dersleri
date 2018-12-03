@@ -7,3 +7,5 @@ Temeller klasörü ile eðitime devam edildi.
 Önce Javascript Beginning
 Console
 Deðiþkenler,Veritipleri ile devam edildi.
+----------------
+Temeller klasörüne öncelik yapýsý eklendi.
