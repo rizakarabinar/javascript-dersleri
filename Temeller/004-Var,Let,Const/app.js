@@ -14,6 +14,7 @@ console.log(typeof a);
 
 // Let ile degisken tanimlama
 
-let a = "riza";
+// let a = "karabinar"; // Daha once tanimlanmis degisken isimleri kullanılamaz
+let b = "karabinar"; // Daha once tanimlanmis degisken isimleri kullanılamaz
 
 // let a = "karabinar"; //Tekrar tanimlamada hata verecektir.
