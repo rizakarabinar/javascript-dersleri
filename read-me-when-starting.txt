@@ -2,6 +2,8 @@ visual studio code kullanacaðýz.
 iki tane eklentiye ihtiyaç duyuyoruz.
 1-Javascript Code Snippets
 2-Live Server
+-------------------------------------------
+browser lardaki (chrome da f12 gibi) ?editörü? öðrenmek gerekiyor.
 ----------------------------------------------
 Temeller klasörü ile eðitime devam edildi.
 Önce Javascript Beginning
