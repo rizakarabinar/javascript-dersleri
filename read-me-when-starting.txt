@@ -11,3 +11,4 @@ Console
 Deðiþkenler,Veritipleri ile devam edildi.
 ----------------
 Temeller klasörüne öncelik yapýsý eklendi.
+...
