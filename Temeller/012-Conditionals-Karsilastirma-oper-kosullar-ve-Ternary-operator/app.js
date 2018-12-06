@@ -4,7 +4,7 @@
  * == // iki degerin esitligini kontrol eder
  * === // degerlerle birlikte degisken tipi de kontrol eder
  * != // esit degildir mi
- * !== 
+ * !== ne degisken tipi esit , ne de deger olarak esit
  * >  // Buyuktur
  * < // kucuktur
  * >= // Buyuk veya esittir
@@ -89,3 +89,19 @@ else console.log("sayi 13 degil.");
 
 //Swich case
 
+const process2 = 2;
+
+switch(process2){
+    case 1 :
+        console.log("islem 1");
+        break; // eger kullanilmaz ise break gorene kadar tüm case lere girer
+    case 2 :
+        console.log("islem 2");
+        break;
+    case 3:
+        console.log("islem 3");
+        break;
+    default :
+        console.log("gecersiz islem");
+        break;//Yazilsa da olur yazilmasa da olur.
+}
