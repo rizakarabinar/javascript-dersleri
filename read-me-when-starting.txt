@@ -11,4 +11,5 @@ Console
 Deðiþkenler,Veritipleri ile devam edildi.
 ----------------
 Temeller klasörüne öncelik yapýsý eklendi.
-...
+------------------------------------------
+016 klasoru ile birlikte temel dersler bitmis olup, 017 ile birlikte DOM manipulasyonu baslamistir.
