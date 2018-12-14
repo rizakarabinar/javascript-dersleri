@@ -1,53 +1,71 @@
-// Klavye Eventleri
+
+const title = document.querySelector("#tasks-title");
+console.log(title);
 
 
-// keypress -- Sadece harfler ve sayilar dikkate alinir. Diger karakterlerde calismaz
-//Start :
-// document.addEventListener("keypress",fKeyPress);
+// //  Start : Click Eventi -- Mouse tiklandiginda calisacak olan eventtir. // Sag tikta calismadigini gözlemleyiniz.
+// title.addEventListener("click",run);
 
-// function fKeyPress(e){
-//     console.log("key press calisti");
+// function run(e){
+//     console.log(e);
+//     console.log(e.type); // Event in type ini verir, donene deger "click" olacaktir.
+// };
 
-//     //Hangi tusa basildi peki : 
-//     console.log(e.which); // ASCII tablosundaki degeri -- google it --> asci table
-//     console.log(e.key); // bastigimiz degeri alabiliriz
+// //Start : Double Click Eventi
+// title.addEventListener("dblclick",run2);
+
+// function run2(e){
+//     console.log(e.type);
 // };
 
 
+// // Start : Mouse Down Eventi // Mouse Click eventine benziyor, ancak islemin tamamlanmasini beklemez. sağ tık sol tik farketmez.
+// title.addEventListener("mousedown",run3);
 
-// // keydown
-// //Start :
-// //tusa bastigimiz anda calisan bir listenner. tum tuslarda aktif olarak calisir
-// document.addEventListener("keydown", fKeyDown);
-
-// function fKeyDown(e){
-//     console.log(e.key);
+// function run3(e){
+//     console.log(e.type);
 // };
 
-// keyup
-//Start : 
-// //basili bir tusu biraktigimiz anda calisan bir listenner. tum tuslarda aktif olarak calisir
+// // Start : Mouse Up Eventi // Mouse Tuslarinin herhangi birinden el cektigimizde calisir.
+// title.addEventListener("mouseup",run4);
 
-// document.addEventListener("keyup", fKeyUp);
-
-// function fKeyUp(e){
-//     console.log(e.key);
+// function run4(e){
+//     console.log(e.type);
 // };
 
+// // Start : Mouse Over Eventi : Mouse elementin uzerinden gectiginde calisir.
+
+// title.addEventListener("mouseover",function(e){
+//     console.log(e.type);
+// });
+
+// // Start : Mouse Out eventi ilgili elementten cikildiginde calisir.
+
+// title.addEventListener("mouseout",function(e){
+//     console.log(e.type);
+// });
+
+// // START:
+//  //Mouse Over ve Mouse Out in extra bir ozelliginin farkinda olalim istiyorum.
+const cardBody = document.getElementsByClassName("card-body")[1];
+// console.log(cardBody);
+
+// //Start : 
+// cardBody.addEventListener("mouseover",function(e){
+//     console.log(e.type); // goreceksiniz ki ayni elementin icindeki, diger elementlerde gezerken de tekrar tekrar cagirilacak.
+// });
+
+// //Start : 
+// cardBody.addEventListener("mouseout",function(e){
+//     console.log(e.type); // goreceksiniz ki ayni elementin icindeki, diger elementlerde gezerken de tekrar tekrar cagirilacak.
+// });
 
 
+// START : Aklinizda ben bu elemente girdigimde ve ciktigimda bir defa calisacak birseyi nasil yaparim sorusu olustuysa eger :
+// Goreceginiz gibi yalnizca bir defa calisacaklar, "mouseenter" ilk giriste, "mouseleave" sadece cikista.
+cardBody.addEventListener("mouseenter",run5);
+cardBody.addEventListener("mouseleave",run5);
 
-//Start : Yapacagimiz islem todo ekleyecegimiz yere yazdigimiz degerleri, baslikta toparlamak.
-const header = document.getElementsByClassName("card-header")[0]; // const todoInput = document.querySelector(".card-header");
-const todoInput = document.querySelector("#todo");
-
-todoInput.addEventListener("keyup",changeText);
-
-function changeText(e){
-    //en son yazdigimiz girdinin tamamini almak icin ornek
-    // console.log(e.target); // ile degisiklik yapilan yeri alabiliyorduk.
-    // console.log(e.target.value); // ile de degisiklik yapilan degeri alabiliyoruz.
-    header.textContent = e.target.value;
+function run5(e){
+    console.log(e.type);
 };
-
-console.log(header); 
