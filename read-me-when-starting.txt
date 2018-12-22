@@ -3,7 +3,7 @@ iki tane eklentiye ihtiyaç duyuyoruz.
 1-Javascript Code Snippets
 2-Live Server
 -------------------------------------------
-browser lardaki (chrome da f12 gibi) ?editörü? öðrenmek gerekiyor.
+browser lardaki (chrome da f12 gibi) web gelistirici editorlerini öðrenmek gerekiyor.
 ----------------------------------------------
 Temeller klasörü ile eðitime devam edildi.
 Önce Javascript Beginning
@@ -14,4 +14,6 @@ Temeller klasörüne öncelik yapýsý eklendi.
 ------------------------------------------
 016 klasoru ile birlikte temel dersler bitmis olup, 017 ile birlikte DOM manipulasyonu baslamistir.
 ----------------
-Eventler tamamlandi.
+EÐÝTÝMDE TAKÝP EDÝLMESÝ GEREKEN KLASÖRLER SIRASIYLA
+-Temeller
+-Javascript-ile-DOM-Manipulasyonu

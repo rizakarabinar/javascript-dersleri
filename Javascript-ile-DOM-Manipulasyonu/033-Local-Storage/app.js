@@ -86,19 +86,17 @@ const input = document.querySelector("#todo");
 form.addEventListener("submit",addTodos);
 
 function addTodos(e){
-    console.log("girdi");
-    // const value = input.value;
-    // let todos ; 
-    // if(localStorage.getItem("todos" === null)){
-    //     todos = [];
-    //     console.log(todos);
-    // }
-    // else{
-    //     todos.JSON.parse(localStorage.getItem("todos"));
-    // }
+    const value = input.value;
+    let todos ; 
+    if(localStorage.getItem("todos") === null){
+        todos = [];
+    }
+    else{
+        todos = JSON.parse(localStorage.getItem("todos")); // localstorage daki degeri, stringify olarka yazilmisti, parse ederek aldik.
+    }
 
-    // todos.push(value);
-    // localStorage.setItem("todos",JSON.stringify(todos));
+    todos.push(value); // dizimize eleman ekledik.
+    localStorage.setItem("todos",JSON.stringify(todos)); // dizimizi stringify ederek localstorage a yazdik.
 
-    // e.preventDefault();
+    e.preventDefault();
 };
