@@ -181,7 +181,7 @@ function loadAllTodosToUi(){
 }
 
 function deleteTodo(e){
-    console.log(e.target); // dogru element i bulmamıza yardımcı olacaktır. göreceğiniz gibi listener ın çalışması gereken tek yer fa fa-remove class ına sahip olunan elementtir.
+    // console.log(e.target); // dogru element i bulmamıza yardımcı olacaktır. göreceğiniz gibi listener ın çalışması gereken tek yer fa fa-remove class ına sahip olunan elementtir.
     
     if(e.target.className === "fa fa-remove"){
         /**
@@ -204,5 +204,21 @@ function deleteTodo(e){
          * şimdilik sadece arayüzden kaldırdık. Sayfa yüklendiğinde değerler geri gelecektir.
          *  */// 
 
+
+         // Step 6 : Local storage dan silmek : tabiki dogru olan showAlert islemini tum silme islemi tamamlandiginda cagirmak gerekiyor.
+         deleteTodoFromStorage(e.target.parentElement.parentElement.textContent);
+
     }
+}
+
+// Step 6 : todo nun localstorge dan silinmesi
+function deleteTodoFromStorage(deletedTodo){
+    let todos = getTodosFromStorage();
+    todos.forEach(function(todo,index){
+        if( deletedTodo === todo)
+           todos.splice(index,1); // metodu unutmuş olmayı dert etmeyin, google it!!!
+    })
+
+    localStorage.setItem("todos",JSON.stringify(todos));
+
 }
