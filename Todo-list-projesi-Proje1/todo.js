@@ -36,6 +36,11 @@ function addTodo(e){
     else{
         // console.log(newTodo); // artik console a yazdırmak yerine element olarak ekranı çizmemiz gerekiyoer :)
         addTodoToUi(newTodo); // islerimizi oldukca fonksiyona bolmek lazım. eger tek bir is yapıyorsak function olarak ayirmaliyiz.
+
+        //Step 3 : todo muzu localstorage a yazacagiz
+        addTodoToLocalStorage(newTodo);
+
+
         showAlert("success","Todo basarili bir şekilde eklendi"); // tek bir function ile birden fazla durum için dinamik alert function u oluşturmak için parametre gönderelim
     }
 
@@ -117,4 +122,40 @@ function showAlert(status, message){
     function removeAlert(){
         alert.remove();
     }
+}
+
+
+function addTodoToLocalStorage(newTodo){
+
+    // // Start : 
+    // let todos ;
+
+    // if(localStorage.getItem("todos") === null){
+    //     todos = [];
+    // }else{
+    //     todos = JSON.parse(localStorage.getItem("todos"));
+    // }
+
+    /**
+     * yukarıda yorum satırı yapılan kalıbı çok fazla yerde kullanacağız. Tekrar tekrar yazmak yerine bir function haline getirip öyle kullanalım.
+     */
+    let todos = getTodosFromStorage();
+
+    todos.push(newTodo);
+
+    localStorage.setItem("todos",JSON.stringify(todos));
+}
+
+
+// Storage dan tum todo larımızı almıs olacak.
+function getTodosFromStorage(){
+    let todos ;
+
+    if(localStorage.getItem("todos") === null){
+        todos = [];
+    }else{
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+
+    return todos;
 }

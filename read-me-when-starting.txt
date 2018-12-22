@@ -17,3 +17,4 @@ Temeller klasörüne öncelik yapýsý eklendi.
 EÐÝTÝMDE TAKÝP EDÝLMESÝ GEREKEN KLASÖRLER SIRASIYLA
 -Temeller
 -Javascript-ile-DOM-Manipulasyonu
+-Todo-list-projesi-Proje1
