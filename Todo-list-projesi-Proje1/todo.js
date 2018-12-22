@@ -22,9 +22,23 @@ function eventListener(){
 
 function addTodo(e){
     const newTodo = todoInput.value.trim(); // Peki trim() ne işe yarar : Kodlamada yeni arkadaşlar için başında ve sonunda boşluklu girilen değerleri temiz olarak almıs aluruz
-   
-    // console.log(newTodo); // artik console a yazdırmak yerine element olarak ekranı çizmemiz gerekiyoer :)
-    addTodoToUi(newTodo); // islerimizi oldukca fonksiyona bolmek lazım. eger tek bir is yapıyorsak function olarak ayirmaliyiz.
+    let mesaj = "";
+    // Step2 : input alanında bir değer yoksa, Bilgilendime mesajlarını ekleyelim.
+    if(newTodo === ""){
+
+        // Arayüz olarak bootstrap 4 kullanıyoruz ve kendi alert mesajlarını internetten bir incelemeneizde fayda var.
+        /**
+         * https://v4-alpha.getbootstrap.com/components/alerts/
+         */
+        mesaj = "Lütfen bir todo girin.";
+        showAlert("danger",mesaj); // tek bir function ile birden fazla durum için dinamik alert function u oluşturmak için parametre gönderelim
+    }
+    else{
+        // console.log(newTodo); // artik console a yazdırmak yerine element olarak ekranı çizmemiz gerekiyoer :)
+        addTodoToUi(newTodo); // islerimizi oldukca fonksiyona bolmek lazım. eger tek bir is yapıyorsak function olarak ayirmaliyiz.
+        showAlert("success","Todo basarili bir şekilde eklendi"); // tek bir function ile birden fazla durum için dinamik alert function u oluşturmak için parametre gönderelim
+    }
+
 
     e.preventDefault();
 }
@@ -42,10 +56,10 @@ function addTodoToUi(degisken1){
 
                         </li>-->
  */
-    // en alta yapilan yorum sonrasi if blogu eklenmistir. eklenmistir
-    if(degisken1.length < 1){ // degisken === null seklinde kontrol yapıldı ama yemedi.
+    // en alta yapilan yorum sonrasi if blogu eklenmistir. eklenmistir. ve 
+    // if(degisken1 === ""){ // degisken === null seklinde kontrol yapıldı ama yemedi. degisken1.length <  1 de yapılabilir. 
 
-    }else{
+    // }else{
 
         //list item olusturma
         const listItem = document.createElement("li");
@@ -71,12 +85,36 @@ function addTodoToUi(degisken1){
         todoInput.value = "";
 
         /**
-         * dikkatli bir test sonrasi göreceksiniz ki input alanı boş bile olsa tuşa her basıldığında boş bir todo kaydı atıyor :) bunun da önüne geçelim ve if lerimizi ekleyelim.
+         * dikkatli bir test sonrasi göreceksiniz ki input alanı boş bile olsa tuşa her basıldığında boş bir todo kaydı atıyor :) 
+         * bunun da önüne geçelim ve if lerimizi ekleyelim. 
+         * -- daha sonra if blogunu yorumlayarak aslında olması gerektiği gibi bilgilendirme mesajı nasıl verilir onu göreceğiz.
          * 
          * ayrıca şimdilik sadece arayüze eklediğimizi, sayfanın her yenilendiğinde verilerin silindiğini farkedeceksiniz.
          */
 
         // console.log(listItem); // console.log sizin her daim yardımcınız olacak, dogru nesneyi secip secmedigimiz vs gibi konuları anlık görebilirsiniz.
         // console.log(link);
+    // }
+}
+
+
+// Bilgilendirme mesajları için gerekli function, unutmayın sadece tek bir iş yapan tüm parçaları ayırmak işimizi çok kolaylaştırır.
+function showAlert(status, message){
+    const alert = document.createElement("div");
+    // alert.className = "alert alert-" + status; // bu bir yontemken bunun asıl olması gereken seklini asagida yazalım.
+    alert.className = `alert alert-${status}`;
+    alert.textContent = message;
+
+    firstCardBody.appendChild(alert); // 
+    /**goreceksiniz ki sorunsuz bir sekilde calisiyor. Ancak ekranda devamlı kalıyor. Bunun devamlı kalması yerine belirli bir süre sonra kaybolmasını sağlayalıım.
+     */
+
+    // Window objemizin setTimeout function ını kullanabiliriz
+    // window.setTimeout -- direk ana scope umuz window olduğu için tıpkı alert te yaptığımız gibi direk kullanabiliriz. Söyle ki :
+
+    setTimeout(removeAlert,1000); // iki parametre alır, 1.si çalışacak function, 2.si ne kadar süre sonra çalışacağı. 1000 ms = 1 sn demektir.
+
+    function removeAlert(){
+        alert.remove();
     }
 }
