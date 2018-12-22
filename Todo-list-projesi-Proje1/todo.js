@@ -22,8 +22,32 @@ function eventListener(){
 
     // Step 5 : Todoların tek tek silinmesi icin
     secondCardBody.addEventListener("click",deleteTodo);
+
+
+    // Step 7 Filtreleme islemi yapacagiz.
+    filterInput.addEventListener("keyup", filterTodos)
 }
 
+// Step 7 : filtreleme islemleri icin.
+function filterTodos(e){
+    // console.log(e.target.value); // once eventimizin nerde oldugunu gorelim.
+
+    const filterValue = e.target.value.toLowerCase(); // kucuk buyuk harf duyarliligini ortadan kaldirmak icin bu yolu izliyoruz.
+
+    const todoList = document.querySelectorAll(".list-group-item.d-flex.justify-content-between");
+
+    todoList.forEach(function(todo){
+        const text = todo.textContent.toLowerCase(); // case senstive yapmak için bu yolu izliyoruz.
+        if(text.indexOf(filterValue) === -1){
+            // Bulunamadigi durumda
+            todo.setAttribute("style","display : none"); // bootstap in d-flex classi display ozelligini block olarak sabitler.
+            todo.setAttribute("style","display : none !important"); // yukarıdaki sorunu ortadan kaldırmak icin important anahtar kelimesini kullanacagiz.- css detay bilgisi-
+        }else{
+            todo.setAttribute("style","display : block");
+        }
+    })
+    
+}
 
 function addTodo(e){
     const newTodo = todoInput.value.trim(); // Peki trim() ne işe yarar : Kodlamada yeni arkadaşlar için başında ve sonunda boşluklu girilen değerleri temiz olarak almıs aluruz
