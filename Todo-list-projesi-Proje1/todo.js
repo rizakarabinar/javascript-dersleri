@@ -17,6 +17,8 @@ eventListener();
 function eventListener(){
     form.addEventListener("submit",addTodo); // submit sırasındaki event listener
 
+    // Step 4 : Sayfamiz yuklendiginde localstorage a kaydettigimiz todo ları geri yukleyelim.
+    document.addEventListener("DOMContentLoaded", loadAllTodosToUi);
 }
 
 
@@ -158,4 +160,19 @@ function getTodosFromStorage(){
     }
 
     return todos;
+}
+
+
+function loadAllTodosToUi(){
+    // let todos = JSON.parse(localStorage.getItem("todos")); // seklinde yazabilirsiniz ancak bu sizi(eger localstorage ınızı temizlemediyseniz yanıltır.) Temizleyip tekrar deneyin :)
+    let todos = getTodosFromStorage();
+
+    // for(i = 0 ; i < todos.length ; i ++){
+    //     addTodoToUi(todos[i]);
+    // }
+
+    // for kullanmak yerine foreach kullanarak asagidaki gibi de yazabilecegimizi zaten ogrenmistik.
+    todos.forEach(function(todo) {
+        addTodoToUi(todo);
+    });
 }
