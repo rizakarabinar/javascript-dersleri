@@ -25,7 +25,41 @@ function eventListener(){
 
 
     // Step 7 Filtreleme islemi yapacagiz.
-    filterInput.addEventListener("keyup", filterTodos)
+    filterInput.addEventListener("keyup", filterTodos);
+
+    // Step 8 : Tüm tasklari temizleme işlemi
+    clearBtn.addEventListener("click", clearAllTodos);
+
+}
+
+// Step 8 için oluşturuldu.
+function clearAllTodos(){
+
+    // kullanicinin hata yapmamasi adina ilk once emin misin diye soralım 
+    if(confirm("Tümünü silmek istediğinize emin misiniz?")){
+
+        
+        // 1-  once arayuzden todoları kaldırmalıyız.
+        // console.log("x");
+        // todoList.innerHTML = ""; // kesinlikle calisir ancak daha hızlı bir yontem var :)
+
+        console.log(todoList.firstElementChild); 
+        /**
+         * li leri alabildigimizi gordugumuze gore. first element child larimizi remove edelim.
+         * first element child boş ise null olarak döndüğünü görebilirsiniz. */ 
+
+         // şu halde :
+
+         while(todoList.firstElementChild != null){
+             todoList.removeChild(todoList.firstElementChild); // daha uzun bile gorunse, buyuk projelerde daha hızlı olacaktır. kücuk projelerde yukarıdaki de tercih edilebilri.
+         }
+
+
+         // 2-  local storage dan temizlemek gerek.
+         localStorage.removeItem("todos");
+
+         showAlert("info","tüm todolar temizlendi");
+    }
 }
 
 // Step 7 : filtreleme islemleri icin.
