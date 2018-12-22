@@ -19,6 +19,9 @@ function eventListener(){
 
     // Step 4 : Sayfamiz yuklendiginde localstorage a kaydettigimiz todo ları geri yukleyelim.
     document.addEventListener("DOMContentLoaded", loadAllTodosToUi);
+
+    // Step 5 : Todoların tek tek silinmesi icin
+    secondCardBody.addEventListener("click",deleteTodo);
 }
 
 
@@ -175,4 +178,31 @@ function loadAllTodosToUi(){
     todos.forEach(function(todo) {
         addTodoToUi(todo);
     });
+}
+
+function deleteTodo(e){
+    console.log(e.target); // dogru element i bulmamıza yardımcı olacaktır. göreceğiniz gibi listener ın çalışması gereken tek yer fa fa-remove class ına sahip olunan elementtir.
+    
+    if(e.target.className === "fa fa-remove"){
+        /**
+         * <!-- <li class="list-group-item d-flex justify-content-between">
+                            Todo 1
+                            <a href = "#" class ="delete-item">
+                                <i class = "fa fa-remove"></i>
+                            </a>
+
+                        </li>-->
+         */
+        // boyle bir elemente sahip oldugumuzu dusunuyoruz.
+
+        // li yi silmem gerektigi icin iki derece yukarıya cıkarak ilgili islemi yapacagiz
+
+        e.target.parentElement.parentElement.remove();
+        showAlert("success","silme işlemi başarıyla gerçekleştirildi"); 
+        /**
+         * ancak göreceksiniz ki localstorage dan silme işlemini yapmadık. şimdi sıra ona geldi.
+         * şimdilik sadece arayüzden kaldırdık. Sayfa yüklendiğinde değerler geri gelecektir.
+         *  */// 
+
+    }
 }
