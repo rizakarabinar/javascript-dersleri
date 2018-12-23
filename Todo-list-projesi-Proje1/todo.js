@@ -86,6 +86,7 @@ function filterTodos(e){
 function addTodo(e){
     const newTodo = todoInput.value.trim(); // Peki trim() ne işe yarar : Kodlamada yeni arkadaşlar için başında ve sonunda boşluklu girilen değerleri temiz olarak almıs aluruz
     let mesaj = "";
+
     // Step2 : input alanında bir değer yoksa, Bilgilendime mesajlarını ekleyelim.
     if(newTodo === ""){
 
@@ -97,18 +98,53 @@ function addTodo(e){
         showAlert("danger",mesaj); // tek bir function ile birden fazla durum için dinamik alert function u oluşturmak için parametre gönderelim
     }
     else{
-        // console.log(newTodo); // artik console a yazdırmak yerine element olarak ekranı çizmemiz gerekiyoer :)
-        addTodoToUi(newTodo); // islerimizi oldukca fonksiyona bolmek lazım. eger tek bir is yapıyorsak function olarak ayirmaliyiz.
 
-        //Step 3 : todo muzu localstorage a yazacagiz
-        addTodoToLocalStorage(newTodo);
-
-
-        showAlert("success","Todo basarili bir şekilde eklendi"); // tek bir function ile birden fazla durum için dinamik alert function u oluşturmak için parametre gönderelim
+        // Step 8 : Var olan bir todo yu listeye tekrar eklememek :
+        const isTodoInListValue = isTodoInList(newTodo);
+        console.log(isTodoInListValue);
+        
+        if(isTodoInListValue === false){
+            
+            // console.log(newTodo); // artik console a yazdırmak yerine element olarak ekranı çizmemiz gerekiyoer :)
+            addTodoToUi(newTodo); // islerimizi oldukca fonksiyona bolmek lazım. eger tek bir is yapıyorsak function olarak ayirmaliyiz.
+            
+            //Step 3 : todo muzu localstorage a yazacagiz
+            addTodoToLocalStorage(newTodo);
+            
+            
+            showAlert("success","Todo basarili bir şekilde eklendi"); // tek bir function ile birden fazla durum için dinamik alert function u oluşturmak için parametre gönderelim
+        }else{
+            // console.log(isTodoInListValue);
+            showAlert("info","Todo listemizde zaten vardır.");
+        }
     }
 
 
     e.preventDefault();
+}
+
+// Step 8 :
+function isTodoInList(searchtodo){
+    let returnVal = false;
+    const todoList2 = document.querySelectorAll(".list-group-item");
+    // console.log(todoList2);
+    
+    for(i = 0 ; i < todoList2.length ; i ++){
+        if(todoList2[i].textContent === searchtodo){
+            returnVal = true;
+            break;
+        }
+    }
+
+    // // Foreach hata veriyor !!!!
+    // todoList2.forEach(function(t){
+    //     if(t.textContent === searchtodo){
+    //             returnVal = true;
+    //             break;
+    //     }
+    // });
+
+    return returnVal ;
 }
 
 
@@ -220,7 +256,7 @@ function getTodosFromStorage(){
         todos = JSON.parse(localStorage.getItem("todos"));
     }
 
-    return todos;
+    return todos.sort(); // Alfabetik sıralı gelmesi icin yapıldı.
 }
 
 
