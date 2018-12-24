@@ -127,22 +127,23 @@ function addTodo(e){
 function isTodoInList(searchtodo){
     let returnVal = false;
     const todoList2 = document.querySelectorAll(".list-group-item");
-    // console.log(todoList2);
+    console.log(todoList2);
     
-    for(i = 0 ; i < todoList2.length ; i ++){
-        if(todoList2[i].textContent === searchtodo){
-            returnVal = true;
-            break;
-        }
-    }
-
-    // // Foreach hata veriyor !!!!
-    // todoList2.forEach(function(t){
-    //     if(t.textContent === searchtodo){
-    //             returnVal = true;
-    //             break;
+    // for(i = 0 ; i < todoList2.length ; i ++){
+    //     if(todoList2[i].textContent === searchtodo){
+    //         returnVal = true;
+    //         break;
     //     }
-    // });
+    // }
+
+    // Foreach hata veriyor !!!!
+    todoList2.forEach(function(t){
+        // console.log(t);
+        if(t.textContent === searchtodo){
+                returnVal = true;
+                return returnVal;
+        }
+    });
 
     return returnVal ;
 }
