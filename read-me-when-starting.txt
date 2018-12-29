@@ -15,6 +15,9 @@ Temeller klasörüne öncelik yapýsý eklendi.
 016 klasoru ile birlikte temel dersler bitmis olup, 017 ile birlikte DOM manipulasyonu baslamistir.
 ---------------
 Ecmascript 6 ile hayatýmýza giren degisiklikler ele alýnmaya baþlandý.
+Arrow function lar tamamlandý.
+Destruction tamamlandý.
+Spread operator tamamlandý
 ----------------
 EÐÝTÝMDE TAKÝP EDÝLMESÝ GEREKEN KLASÖRLER SIRASIYLA
 -Temeller
