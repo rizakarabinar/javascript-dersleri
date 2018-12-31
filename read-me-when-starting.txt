@@ -17,7 +17,8 @@ Temeller klasörüne öncelik yapýsý eklendi.
 Ecmascript 6 ile hayatýmýza giren degisiklikler ele alýnmaya baþlandý.
 Arrow function lar tamamlandý.
 Destruction tamamlandý.
-Spread operator tamamlandý
+Spread operator tamamlandý.
+for in ve for of tamamlandi.
 ----------------
 EÐÝTÝMDE TAKÝP EDÝLMESÝ GEREKEN KLASÖRLER SIRASIYLA
 -Temeller
