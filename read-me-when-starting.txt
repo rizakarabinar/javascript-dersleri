@@ -19,6 +19,7 @@ Arrow function lar tamamlandý.
 Destruction tamamlandý.
 Spread operator tamamlandý.
 for in ve for of tamamlandi.
+---------------------------
 ----------------
 EÐÝTÝMDE TAKÝP EDÝLMESÝ GEREKEN KLASÖRLER SIRASIYLA
 -Temeller
