@@ -19,8 +19,7 @@ Arrow function lar tamamlandý.
 Destruction tamamlandý.
 Spread operator tamamlandý.
 for in ve for of tamamlandi.
-ES6 Maps tamamlandi
-referans tiplerini hatýrladýk.
+ES6 Maps tamamlandi.
 ---------------------------
 ----------------
 EÐÝTÝMDE TAKÝP EDÝLMESÝ GEREKEN KLASÖRLER SIRASIYLA
