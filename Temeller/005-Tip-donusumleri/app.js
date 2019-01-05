@@ -32,7 +32,8 @@ value = parseFloat("3.14");
 value = parseInt("3.14");
 console.log(value);
 value = parseInt("3");
-
+value = parseInt(3);
+//
 console.log(value);
 console.log(typeof value);
 
