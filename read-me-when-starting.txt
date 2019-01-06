@@ -20,6 +20,8 @@ Destruction tamamlandý.
 Spread operator tamamlandý.
 for in ve for of tamamlandi.
 ES6 Maps tamamlandi.
+--
+Referans tipleri hatýlamakta fayda var.
 ---------------------------
 ----------------
 EÐÝTÝMDE TAKÝP EDÝLMESÝ GEREKEN KLASÖRLER SIRASIYLA
