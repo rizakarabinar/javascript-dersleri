@@ -15,4 +15,5 @@ EÐÝTÝMDE TAKÝP EDÝLMESÝ GEREKEN KLASÖRLER SIRASIYLA
 -Todo-list-projesi-Proje1
 -ES6+-Ozellikleri
 -Javascript-OOP-Prototype-ES6 Oncesi
+-ES6+-Ozellikleri-2
 -------------------
